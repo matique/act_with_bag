@@ -91,7 +91,7 @@ module DK
 	if accessor
 	  self.class_eval %{
 	    def #{accessor}(value)
-	      instance_variable_set(:@bag, {})  unless bag.is_a?(Hash)
+	      @attributes['bag'] = {}  unless bag.is_a?(Hash)
 	      self.bag.merge!(:#{baggie} => value)
 	    end
 	  }
