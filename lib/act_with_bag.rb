@@ -50,6 +50,10 @@ module DK
 	      res << p.to_i unless stopped
 	    }
 	    next unless found
+      ## weird Timestamp, Hash and YAML problem
+	    res = [0]  if res == []
+	    res[0] = 0  unless res[0] >= 0
+
 	    value = Date.new(*res) rescue value = nil
 	    params[model][baggie] = value
 	  end
