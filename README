@@ -46,7 +46,7 @@ In controller:
 Test
 ====
 
-ruby ./test/unit/bag_test.rb
+rake
 
 
-Copyright (c) 2009, 2010 [Dittmar Krall], released under the MIT license
+Copyright (c) 2009-2011 [Dittmar Krall], released under the MIT license

@@ -1,11 +1,8 @@
-require File.dirname(__FILE__) + '/../test_helper'
+require 'test_helper'
 
-require 'lib/act_with_bag'
-include DK::ActWithBag
 
-class Order
-  attr_accessor :bag
-
+class Order < ActiveRecord::Base
+  serialize :bag, Hash
   add_to_bag :field, :flag => :boolean, :at => :date
 end
 
