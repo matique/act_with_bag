@@ -15,7 +15,7 @@ Keep in mind that the collection is kept in a YAML bag, i.e.
 SQL commands can't access the fields.
 
 Boolean and Date fields require explicit typing, others are
-treated as string.
+treated as string..
 
 Technical background: getters and putters are injected into models.
 If baggies of type :date are being used then
