@@ -2,7 +2,6 @@ require 'test_helper'
 
 
 class Order < ActiveRecord::Base
-  serialize :bag, Hash
   add_to_bag :field, :flag => :boolean, :at => :date
 end
 
