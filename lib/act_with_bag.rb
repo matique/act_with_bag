@@ -9,6 +9,8 @@ module DK
 
       def add_to_bag(*baglets)
 #p "baglets #{baglets.inspect}"
+	serialize :bag, Hash
+
 	self.class_eval %{
 	  def bag=(x)
 	    #bag changes disabled as it must be handled by Bag himself

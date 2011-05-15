@@ -9,7 +9,7 @@ or when many fields without business logic are required.
 
 Install one bag in a table to collect many fields.
 Additional fields or removal of them are easy.
-No migration required for new fields.
+No migration is required for new fields.
 
 Keep in mind that the collection is kept in a YAML bag, i.e.
 SQL commands can't access the fields.
@@ -20,7 +20,7 @@ treated as string.
 Technical background: getters and putters are injected into models.
 If baggies of type :date are being used then
 params must be corrected before an update_attributes.
-Warning: :date fields are not well integrated, avoid them.
+Warning: :date fields are not well integrated; avoid them.
 
 
 Example
@@ -28,7 +28,6 @@ Example
 
 In model:
   class Order < ActiveRecord::Base
-    serialize :bag, Hash
     add_to_bag :name, :color, :description,
 	{:active => :boolean},
 	{:paused_at => :date}
