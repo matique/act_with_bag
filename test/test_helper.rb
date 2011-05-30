@@ -13,6 +13,4 @@ ActiveRecord::Schema.define do
   end
 end
 
-require File.dirname(__FILE__) + '/../lib/act_with_bag.rb'
-include DK::ActWithBag
-
+require File.dirname(__FILE__) + '/../init.rb'
