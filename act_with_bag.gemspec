@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = ActWithBag::VERSION
   s.authors     = ["matique"]
   s.email       = ["dittmar.krall@matique.de"]
-  s.homepage    = ""
+  s.homepage    = "http://www.matique.de"
   s.summary     = %q{act_with_bag (baggies) gem}
   s.description = %q{Add a bag to a Rails model}
 
