@@ -1,8 +1,8 @@
 ActWithBag
 ==========
 
-Plugin for Rails:
-  ./script/plugin install git@github.com:matique/act_with_bag.git
+In Gemfile:
+  gem 'act_with_bag'
 
 Bag helps when fields in a table are not yet settled down
 or when many fields without business logic are required.
