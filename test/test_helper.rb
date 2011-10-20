@@ -3,7 +3,7 @@ require 'test/unit'
 require 'active_record'
 
 ActiveRecord::Base.establish_connection({
-  :adapter => 'postgresql',
+  :adapter => 'sqlite3',
   :database => 'docu_test'
 })
 
@@ -13,4 +13,4 @@ ActiveRecord::Schema.define do
   end
 end
 
-require File.dirname(__FILE__) + '/../init.rb'
+require File.dirname(__FILE__) + '/../lib/act_with_bag.rb'
