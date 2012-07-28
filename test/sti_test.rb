@@ -17,6 +17,16 @@ class StiTest < ActiveSupport::TestCase
     @admin = Administrator.new
   end
 
+  test "kind of" do
+    assert_kind_of User, @user
+    assert_kind_of Administrator, @admin
+  end
+
+  test "STI field type" do
+    assert_nil @user.type
+    assert_equal 'Administrator', @admin.type
+  end
+
   test "have bag" do
     assert @user.respond_to?(:bag)
     assert @admin.respond_to?(:bag)
@@ -44,6 +54,13 @@ class StiTest < ActiveSupport::TestCase
     assert_equal key, @admin.key
     assert_not_equal 'def', @admin.name
     assert_not_equal 'def', @admin.key
+  end
+
+  test "merge" do
+    model = :administrator
+    params = {model => {'at(1i)' => '1', 'at(2i)' => '2','at(3i)' => '3'}}
+    res = Administrator.merge({}, params)
+    assert_nil res[model][:at]
   end
 
 end

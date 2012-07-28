@@ -62,4 +62,11 @@ class BagTest < ActiveSupport::TestCase
     assert_equal value, @order.field
   end
 
+  test "merge for :at :date" do
+    model = :order
+    params = {model => {'at(1i)' => '1', 'at(2i)' => '2','at(3i)' => '3'}}
+    res = Order.merge({}, params)
+    assert_equal Date.new(1, 2, 3), res[model][:at]
+  end
+
 end

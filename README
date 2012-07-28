@@ -22,6 +22,9 @@ If baggies of type :date are being used then
 params must be corrected before an update_attributes.
 Warning: :date fields are not well integrated; avoid them.
 
+Obsolete fields are deleted before_save by:
+  delete_from_bag :field
+
 
 Example
 =======
