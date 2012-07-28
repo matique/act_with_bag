@@ -13,4 +13,11 @@ ActiveRecord::Schema.define do
   end
 end
 
+ActiveRecord::Schema.define do
+  create_table 'users', :force => true do |t|
+    t.string :type
+    t.text   :bag
+  end
+end
+
 require File.dirname(__FILE__) + '/../lib/act_with_bag.rb'
