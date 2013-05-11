@@ -1,11 +1,5 @@
 require 'test_helper'
 
-
-class Order < ActiveRecord::Base
-  add_to_bag :field, :flag => :boolean, :at => :date
-end
-
-
 class BagTest < ActiveSupport::TestCase
 
   def setup
@@ -39,20 +33,6 @@ class BagTest < ActiveSupport::TestCase
     @order.at = value
     assert_equal value, @order.at
     assert_not_equal 'def', @order.at
-  end
-
-  test "boolean access to flag" do
-    value = true
-    @order.flag = value
-    assert_equal value, @order.flag
-    assert @order.flag?
-    assert_not_equal false, @order.flag
-
-    value = false
-    @order.flag = value
-    assert_equal value, @order.flag
-    assert !@order.flag?
-    assert_not_equal true, @order.flag
   end
 
   test "bag is hidden" do

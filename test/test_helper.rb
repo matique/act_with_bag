@@ -21,3 +21,8 @@ ActiveRecord::Schema.define do
 end
 
 require File.dirname(__FILE__) + '/../lib/act_with_bag.rb'
+
+
+class Order < ActiveRecord::Base
+  add_to_bag :field, :flag => :boolean, :at => :date
+end

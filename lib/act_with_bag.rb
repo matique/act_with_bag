@@ -87,6 +87,12 @@ class << ActiveRecord::Base
       self.class_eval %{
 	def #{accessor}
 	  res = bag && bag[:#{baggie}]
+	  if :#{type} == :boolean
+	    return res if res.class == FalseClass
+	    return res if res.class == TrueClass
+	    return res.to_i != 0
+	  end
+	  res
 	end
       }
     end
