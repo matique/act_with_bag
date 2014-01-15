@@ -4,11 +4,12 @@ require 'active_record'
 
 ActiveRecord::Base.establish_connection({
   :adapter => 'sqlite3',
-  :database => 'docu_test'
+  :database => 'bag_test'
 })
 
 ActiveRecord::Schema.define do
   create_table 'orders', :force => true do |t|
+    t.string :category
     t.column 'bag', :text
   end
 end

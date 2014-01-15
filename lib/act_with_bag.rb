@@ -69,62 +69,61 @@ class << ActiveRecord::Base
 
 
  protected
-  def free_accessor(str)
-    accessor = str.to_sym
-    return accessor unless self.method_defined?(accessor)
-    logger.info "** Already defined #{self.to_s}.#{accessor}"
-#p "** Bag: untouched accessor '#{self.to_s}.#{accessor}'"
-    nil
+  def accessor_present?(accessor)
+    accessor_sym = accessor.to_sym
+    res = false
+
+    res = true  if self.method_defined?(accessor_sym)
+    res = true  if self.respond_to?(:attribute_names) &&
+		   self.attribute_names.include?(accessor)
+    if res
+#      logger.info "** Already defined #{self.to_s}.#{accessor}"
+#p "** act_to_bag: untouched accessor '#{self.to_s}.#{accessor}'"
+    end
+    return res
   end
 
   def add_accessor(baggie, type)
-    baggie_s = baggie.to_s
+    accessor = baggie.to_s
     type_sym = type.to_sym
 #p "add_accessor #{self.to_s} #{baggie.inspect} #{type_sym.inspect}"
 
-    accessor = free_accessor("#{baggie_s}")
-    if accessor
-      self.class_eval %{
-	def #{accessor}
-	  res = bag && bag[:#{baggie}]
-	  if :#{type} == :boolean
-	    return res if res.class == FalseClass
-	    return res if res.class == TrueClass
-	    return res.to_i != 0
-	  end
-	  res
-	end
-      }
-    end
+    return  if accessor_present?(accessor)
 
-    accessor = free_accessor("#{baggie_s}=")
-    if accessor
-      @baggies_date[baggie] = type  if type == :date
-      self.class_eval %{
-	def #{accessor}(value)
-	  @attributes['bag'] = {}  unless bag.is_a?(Hash)
-	  unless value.nil?
-	    self.bag[:#{baggie}] = value
-	  else
-	    self.bag.delete(:#{baggie})
-	    nil
-	  end
-	end
-      }
-    end
-
-    return  unless type_sym == :boolean
-    accessor = free_accessor("#{baggie_s}?")
-    if accessor
-      self.class_eval %{
-	def #{accessor}
-	  res = bag && bag[:#{baggie}]
+    self.class_eval %{
+      def #{accessor}
+	res = bag && bag[:#{baggie}]
+	if :#{type} == :boolean
 	  return res if res.class == FalseClass
 	  return res if res.class == TrueClass
-	  res.to_i != 0
+	  return res.to_i != 0
 	end
-      }
-    end
+	res
+      end
+    }
+
+    @baggies_date[baggie] = type  if type == :date
+    self.class_eval %{
+      def #{accessor}=(value)
+	@attributes['bag'] = {}  unless bag.is_a?(Hash)
+	unless value.nil?
+	  self.bag[:#{baggie}] = value
+	else
+	  self.bag.delete(:#{baggie})
+	  nil
+	end
+      end
+    }
+
+    return  unless type_sym == :boolean
+    self.class_eval %{
+      def #{accessor}?
+	res = bag && bag[:#{baggie}]
+	return res if res.class == FalseClass
+	return res if res.class == TrueClass
+	res.to_i != 0
+      end
+    }
   end
 
 end
