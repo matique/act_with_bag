@@ -1,9 +1,9 @@
-require 'coveralls'
-Coveralls.wear!
-
 require 'rubygems'
 require 'test/unit'
 require 'active_record'
+
+require 'coveralls'
+Coveralls.wear!
 
 ActiveRecord::Base.establish_connection({
   :adapter => 'sqlite3',
