@@ -4,7 +4,7 @@ ActWithBag
 [![Build Status](https://travis-ci.org/matique/act_with_bag.png?branch=master)](https://travis-ci.org/matique/act_with_bag)
 
 In Gemfile:
-  gem 'act_with_bag'
+    gem 'act_with_bag'
 
 Bag helps when fields in a table are not yet settled down
 or when many fields without business logic are required.
@@ -25,32 +25,32 @@ params must be corrected before an update_attributes.
 Warning: :date fields are not well integrated; avoid them.
 
 Obsolete fields are deleted before_save by:
-  delete_from_bag :field
+    delete_from_bag :field
 
 
 Example
 =======
 
 In model:
-  class Order < ActiveRecord::Base
-    add_to_bag :name, :color, :description,
-	{:active => :boolean},
-	{:paused_at => :date}
+    class Order < ActiveRecord::Base
+     add_to_bag :name, :color, :description,
+       {:active => :boolean},
+       {:paused_at => :date}
 
 In controller:
-  class OrdersController < ApplicationController
-    def create
+    class OrdersController < ApplicationController
+
+     def create
       params = Order.merge({}, self.params)   # only if type :date is being used
       @order = Order.new(params[:order])
 
-    def update
+     def update
       @order = Order.find(params[:id])
       params = Order.merge(@order.bag, self.params) # only if type :date is being used
 
 Test
 ====
+    rake
 
-rake
 
-
-Copyright (c) 2009-2011 [Dittmar Krall], released under the MIT license
+Copyright (c) 2009-2014 [Dittmar Krall], released under the MIT license
