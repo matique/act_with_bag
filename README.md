@@ -1,7 +1,6 @@
-[![Build Status](https://travis-ci.org/matique/act_with_bag.png?branch=master)](https://travis-ci.org/matique/act_with_bag)
-
 ActWithBag
 ==========
+[![Build Status](https://travis-ci.org/matique/act_with_bag.png?branch=master)](https://travis-ci.org/matique/act_with_bag)
 
 In Gemfile:
   gem 'act_with_bag'
