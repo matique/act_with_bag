@@ -7,3 +7,6 @@ rvm:
 env:
   - "RAILS_VERSION=2.3.18"
   - "RAILS_VERSION=4.0.0"
+
+notifications:
+  email: false
