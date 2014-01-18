@@ -2,7 +2,6 @@ ActWithBag
 ==========
 [![Gem Version](https://badge.fury.io/rb/act_with_bag.png)](http://badge.fury.io/rb/act_with_bag)
 [![Build Status](https://travis-ci.org/matique/act_with_bag.png?branch=master)](https://travis-ci.org/matique/act_with_bag)
-[![Coverage Status](https://coveralls.io/repos/matique/act_with_bag/badge.png)](https://coveralls.io/r/matique/act_with_bag)
 
 In Gemfile:
   gem 'act_with_bag'
