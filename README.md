@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/matique/act_with_bag.png?branch=master)](https://travis-ci.org/matique/act_with_bag)
+
 ActWithBag
 ==========
 
