@@ -4,4 +4,9 @@ gemspec
 version = ENV["RAILS_VERSION"]
 gem 'rails', version ? "~> #{version}" : ">= 4.0.0"
 
-#gem 'coveralls', require: false
+group :development, :test do
+  gem 'sqlite3'
+  gem 'watchr'
+  gem 'spork'
+  gem 'simplecov', require: false
+end
