@@ -49,4 +49,17 @@ class BagTest < ActiveSupport::TestCase
     assert_equal Date.new(1, 2, 3), res[model][:at]
   end
 
+  test "integer&float" do
+    time = Time.now
+    [123, 2.3, "abc", nil, {a: 1}, [1,2], time].each { |value|
+      @order.field = value
+      assert_equal value, @order.field
+
+      @order.save
+      id = @order.id
+      order = Order.find(id)
+      assert_equal value, order.field
+    }
+  end
+
 end
