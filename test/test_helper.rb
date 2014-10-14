@@ -2,7 +2,7 @@
 #Coveralls.wear!
 
 require 'rubygems'
-require 'test/unit'
+require 'minitest/autorun'
 require 'active_record'
 
 ActiveRecord::Base.establish_connection({

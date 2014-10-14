@@ -1,0 +1,41 @@
+require 'test_helper'
+
+class Order < ActiveRecord::Base
+  add_to_bag({i: :integer}, {f: :float})
+end
+
+
+class TypeTest < ActiveSupport::TestCase
+
+  def setup
+    @order = Order.new
+  end
+
+  test "miscellaneous values" do
+    time = Time.now
+    [123, 2.3, "abc", nil, {a: 1}, [1,2], time].each { |value|
+      @order.field = value
+      assert_equal value, @order.field
+
+      @order.save
+      id = @order.id
+      order = Order.find(id)
+      assert_equal value, order.field
+    }
+  end
+
+  test "integer" do
+    value = "123"
+    @order.i = value
+    assert_equal value.to_i, @order.i
+    assert_kind_of Integer, @order.i
+  end
+
+  test "float" do
+    value = "1.23"
+    @order.f = value
+    assert_equal value.to_f, @order.f
+    assert_kind_of Float, @order.f
+  end
+
+end

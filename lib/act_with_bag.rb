@@ -86,6 +86,7 @@ class << ActiveRecord::Base
   def add_accessor(baggie, type)
     accessor = baggie.to_s
     type_sym = type.to_sym
+    typing = {integer: '.to_i', float: '.to_f'}[type_sym] || ''
 #p "add_accessor #{self.to_s} #{baggie.inspect} #{type_sym.inspect}"
 
     return  if accessor_present?(accessor)
@@ -107,7 +108,7 @@ class << ActiveRecord::Base
       def #{accessor}=(value)
 	@attributes['bag'] = {}  unless bag.is_a?(Hash)
 	unless value.nil?
-	  self.bag[:#{baggie}] = value
+	  self.bag[:#{baggie}] = value#{typing}
 	else
 	  self.bag.delete(:#{baggie})
 	  nil

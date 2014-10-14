@@ -20,6 +20,9 @@ SQL commands can't access the fields.
 Boolean and Date fields require explicit typing, others are
 treated as string.
 
+Types :integer and :float forces a conversion before storing the value, 
+a convenience similar to ActiveRecord handling due to migration definitions.
+
 Technical background: getters and putters are injected into models.
 If baggies of type :date are being used then
 params must be corrected before an update_attributes.
@@ -37,8 +40,10 @@ In model:
 
     class Order < ActiveRecord::Base
      add_to_bag :name, :color, :description,
-       {:active => :boolean},
-       {:paused_at => :date}
+       {idx: :integer},
+       {price: :float},
+       {active: :boolean},
+       {paused_at: :date}
 
 In controller:
 
@@ -51,6 +56,7 @@ In controller:
      def update
       @order = Order.find(params[:id])
       params = Order.merge(@order.bag, self.params) # only if type :date is being used
+      @order.update_attributes(params[:order]
 
 Test
 ====
