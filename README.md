@@ -15,15 +15,19 @@ Additional fields or removal of them are easy.
 No migration is required for new fields.
 
 Keep in mind that the collection is kept in a YAML bag, i.e.
-SQL commands can't access the fields.
+SQL commands can't access the bag fields.
 
-Boolean and Date fields require explicit typing, others are
-treated as string.
+Boolean and Date fields require explicit typing.
 
-Types :integer and :float forces a conversion before storing the value, 
+Fields without typing accept any values which YAML can handle
+(e.g. @order.color = ['red', 'yellow']).
+
+Types :integer, :float and :string
+forces a conversion (.to_i, .to_f, .to_s) before storing the value,
 a convenience similar to ActiveRecord handling due to migration definitions.
 
 Technical background: getters and putters are injected into models.
+
 If baggies of type :date are being used then
 params must be corrected before an update_attributes.
 Warning: :date fields are not well integrated; avoid them.
@@ -39,11 +43,19 @@ Example
 In model:
 
     class Order < ActiveRecord::Base
-     add_to_bag :name, :color, :description,
-       {idx: :integer},
-       {price: :float},
-       {active: :boolean},
-       {paused_at: :date}
+      add_to_bag :name,
+	:color,
+	:description,
+	{idx: :integer},
+	{price: :float},
+	{active: :boolean},
+	{paused_at: :date},
+	{msg: :string}
+
+      def to_s
+	"Order #{name} #{color} #{price}"
+      end
+      ...
 
 In controller:
 
@@ -52,15 +64,17 @@ In controller:
      def create
       params = Order.merge({}, self.params)   # only if type :date is being used
       @order = Order.new(params[:order])
-
+      @order.price = 1.23
+      logger.info "Order #{@order.to_s} repriced to #{@order.price}"
+      ...
      def update
       @order = Order.find(params[:id])
       params = Order.merge(@order.bag, self.params) # only if type :date is being used
-      @order.update_attributes(params[:order]
+      @order.update_attributes(params[:order])
 
 Test
 ====
 
     rake
 
-Copyright (c) 2009-2014 [Dittmar Krall], released under the MIT license
+Copyright (c) 2009-2015 [Dittmar Krall], released under the MIT license

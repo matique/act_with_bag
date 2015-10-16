@@ -17,7 +17,7 @@ class << ActiveRecord::Base
 	  add_accessor(baggie, type)
 	}
       else
-	add_accessor(b, :string)
+	add_accessor(b, :field)
       end
     }
   end
@@ -26,8 +26,7 @@ class << ActiveRecord::Base
 #p "delete_from_bag baglets #{baglets.inspect}"
 
     self.class_eval %{
-      before_save :baggies_delete
-      def baggies_delete
+      before_save do
 	#{baglets}.each {|b|
 	  if b.is_a?(Hash)
 	    b.each {|baggie, type|
@@ -37,7 +36,6 @@ class << ActiveRecord::Base
 	    self.bag.delete(b.to_sym)
 	  end
 	}
-
       end
     }
 
@@ -85,46 +83,67 @@ class << ActiveRecord::Base
 
   def add_accessor(baggie, type)
     accessor = baggie.to_s
-    type_sym = type.to_sym
-    typing = {integer: '.to_i', float: '.to_f'}[type_sym] || ''
-#p "add_accessor #{self.to_s} #{baggie.inspect} #{type_sym.inspect}"
-
     return  if accessor_present?(accessor)
 
-    self.class_eval %{
-      def #{accessor}
-	res = bag && bag[:#{baggie}]
-	if :#{type} == :boolean
+    type_sym = type.to_sym
+    typing = {integer: '.to_i', float: '.to_f',
+	      string: '.to_s'}[type_sym] || ''
+#p "add_accessor #{self.to_s} #{baggie.inspect} #{type_sym.inspect}"
+
+    @baggies_date[baggie] = type  if type_sym == :date
+
+    unless type_sym == :boolean
+      self.class_eval %{
+	def #{accessor}
+	  self.bag && self.bag[:#{baggie}]
+	end
+      }
+
+      self.class_eval %{
+	def #{accessor}=(value)
+	  @attributes['bag'] = {}  unless bag.is_a?(Hash)
+	  unless value.nil?
+	    self.bag[:#{baggie}] = value#{typing}
+	  else
+	    self.bag.delete(:#{baggie})
+	    nil
+	  end
+	end
+      }
+
+    else   ################ now boolean handling ###################
+
+      self.class_eval %{
+	def #{accessor}
+	  res = bag && bag[:#{baggie}]
 	  return res if res.class == FalseClass
 	  return res if res.class == TrueClass
 	  return res.to_i != 0
+	  res
 	end
-	res
-      end
-    }
+      }
 
-    @baggies_date[baggie] = type  if type == :date
-    self.class_eval %{
-      def #{accessor}=(value)
-	@attributes['bag'] = {}  unless bag.is_a?(Hash)
-	unless value.nil?
-	  self.bag[:#{baggie}] = value#{typing}
-	else
-	  self.bag.delete(:#{baggie})
-	  nil
+      self.class_eval %{
+	def #{accessor}=(value)
+	  @attributes['bag'] = {}  unless bag.is_a?(Hash)
+	  falsys = [false, "false", 0, "0", nil]
+	  unless falsys.include?(value)
+	    self.bag[:#{baggie}] = (value == 'true') || value
+	  else
+	    self.bag.delete(:#{baggie})
+	    nil
+	  end
 	end
-      end
-    }
+      }
 
-    return  unless type_sym == :boolean
-    self.class_eval %{
-      def #{accessor}?
-	res = bag && bag[:#{baggie}]
-	return res if res.class == FalseClass
-	return res if res.class == TrueClass
-	res.to_i != 0
-      end
-    }
+      self.class_eval %{
+	def #{accessor}?
+	  #{accessor}
+	end
+      }
+
+    end
+
   end
 
 end

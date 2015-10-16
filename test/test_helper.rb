@@ -1,9 +1,15 @@
+require 'simplecov'
 #require 'coveralls'
 #Coveralls.wear!
 
 require 'rubygems'
 require 'minitest/autorun'
 require 'active_record'
+
+#SimpleCov.start do
+#  add_filter 'test'
+#  command_name 'Minitest'
+#end
 
 ActiveRecord::Base.establish_connection({
   :adapter => 'sqlite3',

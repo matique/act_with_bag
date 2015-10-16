@@ -49,4 +49,14 @@ class BooleanTest < ActiveSupport::TestCase
     assert_equal false, @order.flag
   end
 
+  test "'false' returns a boolean" do
+    @order.flag = 'false'
+    assert_equal false, @order.flag
+  end
+
+  test "'true' returns a boolean" do
+    @order.flag = 'true'
+    assert_equal true, @order.flag
+  end
+
 end
