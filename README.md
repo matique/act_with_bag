@@ -43,19 +43,19 @@ Example
 In model:
 
     class Order < ActiveRecord::Base
-      add_to_bag :name,
-	:color,
-	:description,
-	{idx: :integer},
-	{price: :float},
-	{active: :boolean},
-	{paused_at: :date},
-	{msg: :string}
+     add_to_bag :name,
+      :color,
+      :description,
+      {idx: :integer},
+      {price: :float},
+      {active: :boolean},
+      {paused_at: :date},
+      {msg: :string}
 
-      def to_s
-	"Order #{name} #{color} #{price}"
-      end
-      ...
+     def to_s
+      "Order #{name} #{color} #{price}"
+     end
+     ...
 
 In controller:
 
