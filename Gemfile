@@ -5,9 +5,15 @@ version = ENV["RAILS_VERSION"]
 gem 'rails', version ? "~> #{version}" : ">= 4.0.2"
 
 group :development, :test do
-#  gem 'watchr'
+  gem 'sqlite3'
   gem 'observr'
 #  gem 'spork'
 #  gem 'spring'
+end
+
+group :test do
+#  gem 'watchr'
+  gem 'observr'
   gem 'simplecov', require: false
 end
+
