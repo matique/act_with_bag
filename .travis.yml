@@ -5,6 +5,7 @@ before_install: rm -f Gemfile.lock
 rvm:
 #  - 1.9.3
   - 2.2.3
+  - 2.3.1
 
 env:
   - "RAILS_VERSION=3.2.16"
