@@ -13,7 +13,5 @@ end
 
 group :test do
 #  gem 'watchr'
-  gem 'observr'
   gem 'simplecov', require: false
 end
-

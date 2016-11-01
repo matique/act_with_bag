@@ -10,9 +10,9 @@ In Gemfile:
 Bag helps when fields in a table are not yet settled down
 or when many fields without business logic are required.
 
-Install one bag in a table to collect many fields.
-Additional fields or removal of them are easy.
-No migration is required for new fields.
+Install (migrate) one bag as a text field in a table to collect many fields.
+Additional fields or removal of them are easy;
+no migrations are required for them.
 
 Keep in mind that the collection is kept in a YAML bag, i.e.
 SQL commands can't access the bag fields.
@@ -35,6 +35,17 @@ Warning: :date fields are not well integrated; avoid them.
 Obsolete fields are deleted before_save by:
 
     delete_from_bag :field
+
+
+Warning
+=======
+
+Please add a:
+
+    serialize :bag, Hash
+
+to each subclass accessing a bag field from a superclass.
+Using an "add_to_bag" in the subclass obsoletes the "serialize".
 
 
 Example
@@ -77,4 +88,4 @@ Test
 
     rake
 
-Copyright (c) 2009-2015 [Dittmar Krall], released under the MIT license
+Copyright (c) 2009-2016 [Dittmar Krall], released under the MIT license
