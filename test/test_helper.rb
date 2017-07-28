@@ -1,6 +1,4 @@
 require 'simplecov'
-#require 'coveralls'
-#Coveralls.wear!
 
 require 'rubygems'
 require 'minitest/autorun'
@@ -12,8 +10,8 @@ require 'active_record'
 #end
 
 ActiveRecord::Base.establish_connection({
-  :adapter => 'sqlite3',
-  :database => 'bag_test'
+  adapter:  'sqlite3',
+  database: 'bag.sqlite3'
 })
 
 ActiveRecord::Schema.define do
@@ -34,5 +32,5 @@ require File.dirname(__FILE__) + '/../lib/act_with_bag.rb'
 
 
 class Order < ActiveRecord::Base
-  add_to_bag :field, :flag => :boolean, :at => :date
+  add_to_bag :field, flag: :boolean, at: :date
 end

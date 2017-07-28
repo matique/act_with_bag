@@ -15,12 +15,12 @@ class TypeTest < ActiveSupport::TestCase
     time = Time.now
     [123, 2.3, "abc", nil, {a: 1}, [1,2], time].each { |value|
       @order.field = value
-      assert_equal value, @order.field
+      assert_value value, @order.field
 
       @order.save
       id = @order.id
       order = Order.find(id)
-      assert_equal value, order.field
+      assert_value value, order.field
     }
   end
 
@@ -36,6 +36,12 @@ class TypeTest < ActiveSupport::TestCase
     @order.f = value
     assert_equal value.to_f, @order.f
     assert_kind_of Float, @order.f
+  end
+
+ private
+  def assert_value(expect, actual)
+    assert_equal expect, actual  if expect
+    assert_nil   actual          unless expect
   end
 
 end

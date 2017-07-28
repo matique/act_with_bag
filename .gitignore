@@ -2,4 +2,5 @@
 .bundle
 Gemfile.lock
 pkg/*
-bag_test
+*.sqlite3
+.ruby-version
