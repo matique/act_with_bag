@@ -1,6 +1,7 @@
 language: ruby
 bundler_args: --without production
 before_install: rm -f Gemfile.lock
+script: "bundle exec rake test"
 
 rvm:
 #  - 1.9.3

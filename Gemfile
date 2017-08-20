@@ -1,15 +1,13 @@
 source "https://rubygems.org"
 gemspec
 
-group :development, :test do
-  gem 'sqlite3'
-  gem 'observr'
-#  gem 'spork'
-#  gem 'spring'
-end
+gem 'rails'
 
 group :test do
-  version = ENV["RAILS_VERSION"]
-  gem 'rails', version ? "~> #{version}" : "~> 5.1"
+  gem 'observr'
   gem 'simplecov', require: false
+  gem 'minitest'
+  gem 'capybara'
+  gem 'sqlite3'
+#  gem 'slim'
 end

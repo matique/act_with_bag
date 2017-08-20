@@ -1,22 +1,25 @@
-$:.push File.expand_path('../lib', __FILE__)
-
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'act_with_bag/version'
 
 Gem::Specification.new do |s|
   s.name        = 'act_with_bag'
   s.version     = ActWithBag::VERSION
-  s.licenses    = ['MIT']
-  s.platform    = Gem::Platform::RUBY
   s.summary     = %q{act_with_bag (baggies) gem}
   s.description = %q{Add a bag to a Rails model}
   s.authors     = ['Dittmar Krall']
   s.email       = ['dittmar.krall@matique.de']
   s.homepage    = 'http://matique.de'
 
-  s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  s.license     = 'MIT'
+  s.platform    = Gem::Platform::RUBY
+
+  s.files         = `git ls-files -z`.split("\x0")
+  s.test_files    = s.files.grep(%r{^(test|spec|features)/})
   s.require_paths = ['lib']
 
-  s.add_development_dependency 'sqlite3', '~> 0'  # for testing
+  s.add_development_dependency 'bundler', '~> 1'
+  s.add_development_dependency 'rake', '~> 12'
+  s.add_development_dependency 'appraisal', '~> 2'
+#  s.add_development_dependency 'combustion', '~> 0'
 end
