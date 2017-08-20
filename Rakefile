@@ -1,9 +1,6 @@
-require "bundler/gem_tasks"
-require 'rake'
-require 'rake/testtask'
+require "bundler/setup"
 
-desc 'Default: run unit tests.'
-task :default => :test
+require 'rake/testtask'
 
 desc 'Test the act_with_bag plugin.'
 Rake::TestTask.new(:test) do |t|
@@ -12,3 +9,5 @@ Rake::TestTask.new(:test) do |t|
   t.pattern = 'test/**/*_test.rb'
   t.verbose = false
 end
+
+task :default => :test
