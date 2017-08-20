@@ -88,4 +88,4 @@ Test
 
     rake
 
-Copyright (c) 2009-2016 [Dittmar Krall], released under the MIT license
+Copyright (c) 2009-2017 [Dittmar Krall], released under the MIT license
