@@ -15,7 +15,7 @@ gemfile:
   - gemfiles/rails_5.0.gemfile
   - gemfiles/rails_5.1.gemfile
 
-#matrix:
+matrix:
 #  exclude:
 #    - rvm: 2.2.3
 #      env: "RAILS_VERSION=3.2.16"
