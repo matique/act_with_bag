@@ -1,13 +1,1 @@
-.bundle/
-coverage/
-pkg/
 *.sqlite3
-test/internal/db/*.sqlite3
-
-*.gem
-*.log
-*.lock
-**/*.gem
-**/*.log
-**/*.lock
-test/internal/tmp/
