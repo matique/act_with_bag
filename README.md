@@ -14,13 +14,13 @@ Install (migrate) one bag as a text field in a table to collect many fields.
 Additional fields or removal of them are easy;
 no migrations are required for them.
 
-Keep in mind that the collection is kept in a YAML bag, i.e.
-SQL commands can't access the bag fields.
+Keep in mind that the collection is kept in a YAML bag,
+i.e. SQL commands can't access the bag fields.
 
 Boolean and Date fields require explicit typing.
 
 Fields without typing accept any values which YAML can handle
-(e.g. @order.color = ['red', 'yellow']).
+(e.g. @order.colors = ['red', 'yellow']).
 
 Types :integer, :float and :string
 forces a conversion (.to_i, .to_f, .to_s) before storing the value,
@@ -40,12 +40,16 @@ Obsolete fields are deleted before_save by:
 Warning
 =======
 
-Please add a:
+1. Please add a:
 
     serialize :bag, Hash
 
 to each subclass accessing a bag field from a superclass.
 Using an "add_to_bag" in the subclass obsoletes the "serialize".
+
+2. delete_from_bag just delete the field from the record being saved.
+Other records are untouched,
+i.e. the value of the field will be kept in the database.
 
 
 Example
@@ -88,4 +92,4 @@ Test
 
     rake
 
-Copyright (c) 2009-2018 [Dittmar Krall], released under the MIT license
+Copyright (c) 2009-2019 [Dittmar Krall], released under the MIT license
