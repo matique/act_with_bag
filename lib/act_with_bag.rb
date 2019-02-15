@@ -84,6 +84,19 @@ class << ActiveRecord::Base
   def add_accessor(baggie, type)
     accessor = baggie.to_s
     return  if accessor_present?(accessor)
+#MARS patch, new:
+    #
+    # The @baggies field is indispensable. Otherwise mistakes in renaming
+    # or deleting baggies (without renaming/deleting) the value entry from the
+    # bag, e. g. via delete_from_bag) cannot be detected in a clean way.
+    # Detecting the accessor would be not sufficient, as the accessor may be
+    # created by ActiveRecord::Base or the derived model and it may be
+    # doing completely other things (e. g. accessing a database column).
+    #
+    @baggies ||= {}
+    baggies = ( @baggies[self.to_s.underscore.to_sym] ||= {} )
+    baggies[ baggie ] = type
+#END
 
     type_sym = type.to_sym
     typing = {integer: '.to_i', float: '.to_f',

@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-ruby '2.5.1'
+#ruby '2.6.0'
 gemspec
 
 gem 'rails'
@@ -9,6 +9,6 @@ group :test do
   gem 'simplecov', require: false
   gem 'minitest'
   gem 'capybara'
-  gem 'sqlite3'
+  gem 'sqlite3', '~> 1.3.6'
 #  gem 'slim'
 end
