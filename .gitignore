@@ -1,11 +1,10 @@
-*.sqlite3
-
 .bundle/
 coverage/
-pkg/
-test/internal/db/*.sqlite3
 
 *.gem
 *.log
 *.lock
-test/internal/tmp/
+*.sqlite3
+**/*.gem
+**/*.log
+**/*.lock

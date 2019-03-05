@@ -9,6 +9,7 @@ group :test do
   gem 'simplecov', require: false
   gem 'minitest'
   gem 'capybara'
-  gem 'sqlite3', '~> 1.3.6'
+  gem 'sqlite3', '!= 1.4.0'
+#  gem 'sqlite3'
 #  gem 'slim'
 end
