@@ -7,7 +7,7 @@ In Gemfile:
 
     gem 'act_with_bag'
 
-Bag helps when fields in a table are not yet settled down
+Bag helps when fields in a Rails database table are not yet settled down
 or when many fields without business logic are required.
 
 Install (migrate) one bag as a text field in a table to collect many fields.
@@ -92,4 +92,4 @@ Test
 
     rake
 
-Copyright (c) 2009-2019 [Dittmar Krall], released under the MIT license
+Copyright (c) 2009-2020 [Dittmar Krall], released under the MIT license
