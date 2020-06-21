@@ -1,13 +1,16 @@
-require 'simplecov'
+if ENV['COVERAGE']
+  require 'simplecov'
+  SimpleCov.start do
+    add_filter '/test/'
+  end
+end
 
-require 'rubygems'
+#require 'rails/test_help'
 require 'minitest/autorun'
-require 'active_record'
+require 'minitest/benchmark'
+#require 'capybara/rails'
 
-#SimpleCov.start do
-#  add_filter 'test'
-#  command_name 'Minitest'
-#end
+require 'active_record'
 
 ActiveRecord::Base.establish_connection({
   adapter:  'sqlite3',
