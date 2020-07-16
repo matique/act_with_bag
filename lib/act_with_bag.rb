@@ -28,7 +28,7 @@ class << ActiveRecord::Base
 
     class_eval %{
       before_save do
-        #{baglets}.each {|b|
+        #{baglets}.each { |b|
           if b.is_a?(Hash)
             b.each { |baggie, type|
               self.bag.delete(baggie.to_sym)
