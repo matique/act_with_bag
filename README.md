@@ -1,7 +1,7 @@
 ActWithBag
 ==========
 [![Gem Version](https://badge.fury.io/rb/act_with_bag.png)](http://badge.fury.io/rb/act_with_bag)
-[![Build Status](https://travis-ci.org/matique/act_with_bag.png?branch=master)](https://travis-ci.org/matique/act_with_bag)
+[![Build Status](https://travis-ci.org/matique/act_with_bag.svg?branch=master)](https://travis-ci.org/matique/act_with_bag)
 
 In Gemfile:
 
