@@ -2,15 +2,14 @@
 
 source "https://rubygems.org"
 
-gem "rails", "~> 6.0.0"
-gem "dryer-config", "~> 5.2.0"
+gem "rails", "~> 6.0"
+gem "dryer-config", "~> 6.0"
 
 group :test do
   gem "observr"
+  gem "rubocop", require: false
   gem "simplecov", require: false
-  gem "minitest"
   gem "capybara"
-  gem "sqlite3"
 end
 
 gemspec path: "../"

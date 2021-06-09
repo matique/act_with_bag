@@ -19,9 +19,9 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
 
   s.add_development_dependency 'bundler'
-  s.add_development_dependency 'rake', '~>13'
+  s.add_development_dependency 'rake'
   s.add_development_dependency 'appraisal', '~> 2'
 
-  s.add_development_dependency 'minitest', '~> 5.0'
-  s.add_development_dependency 'sqlite3', '~> 1'
+  s.add_development_dependency 'minitest'
+  s.add_development_dependency 'sqlite3'
 end
