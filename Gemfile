@@ -2,9 +2,9 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'rails'
+gem 'brakeman'
 
 group :test do
-  gem 'brakeman'
   gem 'observr'
   gem 'rubocop', require: false
   gem 'simplecov', require: false
