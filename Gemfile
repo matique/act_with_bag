@@ -4,6 +4,7 @@ gemspec
 gem 'rails'
 
 group :test do
+  gem 'brakeman'
   gem 'observr'
   gem 'rubocop', require: false
   gem 'simplecov', require: false
