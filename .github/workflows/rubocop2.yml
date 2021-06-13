@@ -1,6 +1,6 @@
 # under construction 
 
-name: Analyze code statically
+name: Analyze code statically #2
 "on": pull_request
 jobs:
   rubocop:
