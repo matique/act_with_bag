@@ -23,5 +23,5 @@ jobs:
 
     - name: Run Rubocop
 #      run: bin/rubocop
-      run: rubocop
-#      run: bundle exec rubocop
+#      run: rubocop
+      run: bundle exec rubocop
