@@ -1,5 +1,5 @@
-inherit_from:
-  - ~/configs/.rubocop.yml
+#inherit_from:
+#  - ~/configs/.rubocop.yml
 
 AllCops:
   Include:
