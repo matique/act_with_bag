@@ -1,6 +1,6 @@
 # under construction
 
-name: Lint
+name: Rubocop
 
 on: push
 
