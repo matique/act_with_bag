@@ -22,4 +22,6 @@ jobs:
       run: gem install bundler && bundle install --jobs 4 --retry 3
 
     - name: Run Rubocop
-      run: bin/rubocop
+#      run: bin/rubocop
+      run: rubocop
+      run: bundle exec rubocop
