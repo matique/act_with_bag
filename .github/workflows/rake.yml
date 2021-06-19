@@ -16,13 +16,9 @@ jobs:
         ruby: [2.7]
     runs-on: ${{ matrix.os }}
 
-
-#    name: Rake
-#    runs-on: ubuntu-18.04
-#    runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v1
+#    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
 
     - name: Setup Ruby
 #      uses: actions/setup-ruby@v1
