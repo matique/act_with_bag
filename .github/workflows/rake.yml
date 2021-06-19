@@ -13,7 +13,7 @@ jobs:
         os: [ubuntu-latest]
         # Due to https://github.com/actions/runner/issues/849, we have to use quotes for '3.0'
 #        ruby: [2.5, 2.6, 2.7, '3.0', head, jruby, jruby-head, truffleruby, truffleruby-head]
-        ruby: [2.7]
+        ruby: [2.5, 2.7]
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -22,11 +22,11 @@ jobs:
     - name: Setup Ruby
       uses: ruby/setup-ruby@v1
       with:
-#        ruby-version: 2.7
         ruby-version: ${{ matrix.ruby }}
 
     - name: Install dependencies
       run: gem install bundler && bundle install --jobs 4 --retry 3
 
     - name: Run Rake
-      run: rake
+#      run: rake
+      run: bundle exec rake
