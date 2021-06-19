@@ -15,27 +15,27 @@ jobs:
 #        ruby: [2.5, 2.6, 2.7, '3.0', head, jruby, jruby-head, truffleruby, truffleruby-head]
         ruby: [2.7]
     runs-on: ${{ matrix.os }}
-#    name: Rake
-#    runs-on: ubuntu-18.04
-#    runs-on: ubuntu-latest
-
-    steps:
-#    - uses: actions/checkout@v1
-    - uses: actions/checkout@v2
-    - uses: ruby/setup-ruby@v1
-
-    - name: Setup Ruby
-#      uses: actions/setup-ruby@v1
-#      uses: ruby/setup-ruby@v1
-      with:
-#        ruby-version: 2.7
-        ruby-version: ${{ matrix.ruby }}
-
-    - name: Install dependencies
-      run: gem install bundler && bundle install --jobs 4 --retry 3
-
-    - name: Run Rake
-      run: bundle exec rake
+##    name: Rake
+##    runs-on: ubuntu-18.04
+##    runs-on: ubuntu-latest
+#
+#    steps:
+##    - uses: actions/checkout@v1
+#    - uses: actions/checkout@v2
+#    - uses: ruby/setup-ruby@v1
+#
+#    - name: Setup Ruby
+##      uses: actions/setup-ruby@v1
+##      uses: ruby/setup-ruby@v1
+#      with:
+##        ruby-version: 2.7
+#        ruby-version: ${{ matrix.ruby }}
+#
+#    - name: Install dependencies
+#      run: gem install bundler && bundle install --jobs 4 --retry 3
+#
+#    - name: Run Rake
+#      run: bundle exec rake
 
 
 
