@@ -17,9 +17,9 @@ jobs:
     runs-on: ${{ matrix.os }}
 
 
-    name: Rake
+#    name: Rake
 #    runs-on: ubuntu-18.04
-    runs-on: ubuntu-latest
+#    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v1
