@@ -16,7 +16,7 @@ end
 
 def run_it(type, file)
   case type
-  when 'test';  run %(ruby -I test #{file})
+  when 'test';  run %(bundle exec ruby -I test #{file})
 #  when 'spec';  run %(rspec -X #{file})
   else;         puts "#{H} unknown type: #{type}, file: #{file}"
   end
@@ -24,7 +24,7 @@ end
 
 def run_all_tests
   puts "\n#{HH} Running all tests #{HH}\n"
-  %w[test spec].each { |dir| run "rake #{dir}" if  File.exist?(dir) }
+  %w[test spec].each { |dir| run "bundle exec rake #{dir}" if  File.exist?(dir) }
 end
 
 def run_matching_files(base)

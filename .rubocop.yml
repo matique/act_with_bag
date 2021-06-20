@@ -2,6 +2,7 @@ inherit_from:
   - ~/configs/.rubocop.yml
 
 AllCops:
+  NewCops: enable
   Include:
     - 'lib/**/*.rb'
   Exclude:
@@ -23,6 +24,8 @@ Metrics/MethodLength:
 Metrics/PerceivedComplexity:
   Enabled: false
 
+Style/DocumentDynamicEvalDefinition:
+  Enabled: false
 Style/EvalWithLocation:
   Enabled: false
 Style/RescueModifier:
