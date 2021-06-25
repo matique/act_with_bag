@@ -10,9 +10,10 @@ Gem::Specification.new do |s|
   s.authors     = ['Dittmar Krall']
   s.email       = ['dittmar.krall@matique.de']
   s.homepage    = 'http://matique.de'
-
   s.license     = 'MIT'
   s.platform    = Gem::Platform::RUBY
+
+  s.metadata['source_code_uri'] = 'https://github.com/matique/act_with_bag'
 
   s.files         = `git ls-files -z`.split("\x0")
   s.test_files    = s.files.grep(%r{^(test|spec|features)/})
@@ -20,7 +21,7 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'bundler'
   s.add_development_dependency 'rake'
-  s.add_development_dependency 'appraisal', '~> 2'
+  s.add_development_dependency 'appraisal'
 
   s.add_development_dependency 'minitest'
   s.add_development_dependency 'sqlite3'
