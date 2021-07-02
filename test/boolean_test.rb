@@ -1,7 +1,6 @@
-require 'test_helper'
+require "test_helper"
 
 class BooleanTest < ActiveSupport::TestCase
-
   def setup
     @order = Order.new
   end
@@ -39,10 +38,10 @@ class BooleanTest < ActiveSupport::TestCase
   end
 
   test "string 1/0 returns a boolean" do
-    @order.flag = '1'
+    @order.flag = "1"
     assert_equal true, @order.flag
 
-    @order.flag = '0'
+    @order.flag = "0"
     assert_equal false, @order.flag
 
     @order.flag = nil
@@ -50,13 +49,12 @@ class BooleanTest < ActiveSupport::TestCase
   end
 
   test "'false' returns a boolean" do
-    @order.flag = 'false'
+    @order.flag = "false"
     assert_equal false, @order.flag
   end
 
   test "'true' returns a boolean" do
-    @order.flag = 'true'
+    @order.flag = "true"
     assert_equal true, @order.flag
   end
-
 end

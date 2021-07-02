@@ -1,26 +1,22 @@
-require 'test_helper'
-
+require "test_helper"
 
 class Order < ActiveRecord::Base
   add_to_bag :aa, :bb, :cc
   delete_from_bag :bb
 end
 
-
 class DeleteTest < ActiveSupport::TestCase
-
   def setup
     @order = Order.new
   end
 
   test "delete a field" do
-    @order.aa = 'aa'
-    @order.bb = 'bb'
-    @order.cc = 'cc'
+    @order.aa = "aa"
+    @order.bb = "bb"
+    @order.cc = "cc"
     @order.save
-    assert_equal 'aa', @order.aa
+    assert_equal "aa", @order.aa
     assert_nil @order.bb
-    assert_equal 'cc', @order.cc
+    assert_equal "cc", @order.cc
   end
-
 end

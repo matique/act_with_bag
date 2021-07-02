@@ -9,7 +9,7 @@ class << ActiveRecord::Base
       def bag=(x)
         #bag changes disabled as it must be handled by Bag himself
       end
-    }
+    }, __FILE__, __LINE__ - 4
 
     @baggies_date ||= {}
     baglets.each { |b|
@@ -38,7 +38,7 @@ class << ActiveRecord::Base
           end
         }
       end
-    }
+    }, __FILE__, __LINE__ - 12
   end
 
   def merge(_bag, params)
@@ -60,23 +60,28 @@ class << ActiveRecord::Base
       next unless found
 
       ## weird Timestamp, Hash and YAML problem
-      res = [0]  if res == []
-      res[0] = 0  unless res[0] >= 0
+      res = [0] if res == []
+      res[0] = 0 unless res[0] >= 0
 
-      value = Date.new(*res) rescue nil
+      value = begin
+        Date.new(*res)
+      rescue
+        nil
+      end
       params[model][baggie] = value
     }
     params
   end
 
- protected
+  protected
+
   def accessor_present?(accessor)
     accessor_sym = accessor.to_sym
     res = false
 
-    res = true  if method_defined?(accessor_sym)
-    res = true  if respond_to?(:attribute_names) &&
-                   attribute_names.include?(accessor)
+    res = true if method_defined?(accessor_sym)
+    res = true if respond_to?(:attribute_names) &&
+      attribute_names.include?(accessor)
     if res
       #      logger.info "** Already defined #{self.to_s}.#{accessor}"
       # p "** act_to_bag: untouched accessor '#{self.to_s}.#{accessor}'"
@@ -86,7 +91,7 @@ class << ActiveRecord::Base
 
   def add_accessor(baggie, type)
     accessor = baggie.to_s
-    return  if accessor_present?(accessor)
+    return if accessor_present?(accessor)
 
     # MARS patch, new:
     #
@@ -103,11 +108,11 @@ class << ActiveRecord::Base
     # END
 
     type_sym = type.to_sym
-    typing = {integer: '.to_i', float: '.to_f',
-              string: '.to_s'}[type_sym] || ''
+    typing = {integer: ".to_i", float: ".to_f",
+              string: ".to_s"}[type_sym] || ""
     # p "add_accessor #{self.to_s} #{baggie.inspect} #{type_sym.inspect}"
 
-    @baggies_date[baggie] = type  if type_sym == :date
+    @baggies_date[baggie] = type if type_sym == :date
 
     if type_sym == :boolean
       class_eval %(
@@ -118,7 +123,7 @@ class << ActiveRecord::Base
           return res.to_i != 0
           res
         end
-      )
+      ), __FILE__, __LINE__ - 8
 
       class_eval %(
         def #{accessor}=(value)
@@ -131,13 +136,13 @@ class << ActiveRecord::Base
             nil
           end
         end
-      )
+      ), __FILE__, __LINE__ - 11
 
       class_eval %(
         def #{accessor}?
           #{accessor}
         end
-      )
+      ), __FILE__, __LINE__ - 4
 
     else
 
@@ -145,7 +150,7 @@ class << ActiveRecord::Base
         def #{accessor}
           self.bag && self.bag[:#{baggie}]
         end
-      )
+      ), __FILE__, __LINE__ - 4
 
       class_eval %(
         def #{accessor}=(value)
@@ -157,7 +162,7 @@ class << ActiveRecord::Base
             nil
           end
         end
-      )
+      ), __FILE__, __LINE__ - 10
     end
   end
 end

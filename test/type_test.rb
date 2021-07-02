@@ -1,19 +1,17 @@
-require 'test_helper'
+require "test_helper"
 
 class Order < ActiveRecord::Base
   add_to_bag({i: :integer}, {f: :float})
 end
 
-
 class TypeTest < ActiveSupport::TestCase
-
   def setup
     @order = Order.new
   end
 
   test "miscellaneous values" do
     time = Time.now
-    [123, 2.3, "abc", nil, {a: 1}, [1,2], time].each { |value|
+    [123, 2.3, "abc", nil, {a: 1}, [1, 2], time].each { |value|
       @order.field = value
       assert_value value, @order.field
 
@@ -38,10 +36,10 @@ class TypeTest < ActiveSupport::TestCase
     assert_kind_of Float, @order.f
   end
 
- private
-  def assert_value(expect, actual)
-    assert_equal expect, actual  if expect
-    assert_nil   actual          unless expect
-  end
+  private
 
+  def assert_value(expect, actual)
+    assert_equal expect, actual if expect
+    assert_nil actual unless expect
+  end
 end

@@ -1,13 +1,10 @@
-require 'test_helper'
-
+require "test_helper"
 
 class Order < ActiveRecord::Base
   add_to_bag bool: :boolean
 end
 
-
 class BagBooleanTest < ActiveSupport::TestCase
-
   def setup
     @order = Order.new
   end
@@ -22,7 +19,7 @@ class BagBooleanTest < ActiveSupport::TestCase
     assert_equal false, @order.bag.has_key?(:bool)
     @order.bool = 0
     assert_equal false, @order.bag.has_key?(:bool)
-    @order.bool = '0'
+    @order.bool = "0"
     assert_equal false, @order.bag.has_key?(:bool)
   end
 
@@ -37,5 +34,4 @@ class BagBooleanTest < ActiveSupport::TestCase
     @order.bool = false
     assert_equal false, @order.bag.has_key?(:bool)
   end
-
 end
