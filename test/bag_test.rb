@@ -14,10 +14,10 @@ class BagTest < ActiveSupport::TestCase
     assert @order.respond_to?(:flag)
     assert @order.respond_to?(:at)
 
-    assert @order.respond_to?("field=")
-    assert @order.respond_to?("flag=")
-    assert @order.respond_to?("flag?")
-    assert @order.respond_to?("at=")
+    assert @order.respond_to?(:field=)
+    assert @order.respond_to?(:flag=)
+    assert @order.respond_to?(:flag?)
+    assert @order.respond_to?(:at=)
   end
 
   test "string access to field" do

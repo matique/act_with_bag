@@ -34,12 +34,12 @@ class StiTest < ActiveSupport::TestCase
     assert @admin.respond_to?(:name)
     assert @admin.respond_to?(:key)
 
-    assert @user.respond_to?("name=")
-    assert @admin.respond_to?("name=")
-    assert @admin.respond_to?("key=")
+    assert @user.respond_to?(:name=)
+    assert @admin.respond_to?(:name=)
+    assert @admin.respond_to?(:key=)
 
     assert_equal false, @user.respond_to?(:key)
-    assert_equal false, @user.respond_to?("key=")
+    assert_equal false, @user.respond_to?(:key=)
   end
 
   test "access to name & key" do
