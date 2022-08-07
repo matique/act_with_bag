@@ -1,0 +1,3 @@
+test:
+  service: Disk
+  root: /home/dk/github/act_with_bag/tmp/storage
