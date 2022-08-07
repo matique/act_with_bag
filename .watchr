@@ -15,11 +15,13 @@ def run(cmd)
   system "/usr/bin/time --format '#{HH} Elapsed time %E' #{cmd}"
 end
 
-def run_it(type, file)
-  case type
-  when "test" then run %(bundle exec ruby -I test #{file})
-  #  when 'spec';  run %(rspec -X #{file})
-  else; puts "#{H} unknown type: #{type}, file: #{file}"
+def run_it(type, files)
+  files.split(" ").flatten.each do |file|
+    case type
+    when "test" then run %(bundle exec ruby -I test #{file})
+    #  when 'spec';  run %(rspec -X #{file})
+    else; puts "#{H} unknown type: #{type}, file: #{file}"
+    end
   end
 end
 

@@ -66,8 +66,6 @@ is not recommended as it is a patch prone to attacks.
 The configuration
 "Rails.application.config.active_record.yaml_column_permitted_classes = [Symbol]"
 may be incomplete requiring additional classes like "Time" and "Date".
-We are analysing the subject.
-
 (credits to Martin Schöttler).
 
 Example

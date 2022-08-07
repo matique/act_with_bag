@@ -121,7 +121,6 @@ class << ActiveRecord::Base
           return res if res.class == FalseClass
           return res if res.class == TrueClass
           return res.to_i != 0
-          res
         end
       ), __FILE__, __LINE__ - 8
 
