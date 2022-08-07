@@ -8,4 +8,5 @@ group :test do
   gem "standard", require: false
   gem "simplecov", require: false
   # gem "capybara"
+  gem "ricecream"
 end

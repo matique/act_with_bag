@@ -8,7 +8,6 @@ end
 
 class DeleteTest < ActiveSupport::TestCase
   def setup
-Rails.application.config.active_record.yaml_column_permitted_classes = [Symbol]
     @order = Order.new
   end
 

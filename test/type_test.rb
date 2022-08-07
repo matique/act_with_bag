@@ -11,7 +11,21 @@ class TypeTest < ActiveSupport::TestCase
 
   test "miscellaneous values" do
     time = Time.now
-    [123, 2.3, "abc", nil, {a: 1}, [1, 2], time].each { |value|
+    [123, 2.3, "abc", nil, {a: 1}, [1, 2]].each { |value|
+      @order.field = value
+      assert_value value, @order.field
+
+      @order.save
+      id = @order.id
+      order = Order.find(id)
+      assert_value value, order.field
+    }
+  end
+
+  test "Time & Date" do
+    time = Time.now
+    today = Date.today
+    [time, today].each { |value|
       @order.field = value
       assert_value value, @order.field
 
