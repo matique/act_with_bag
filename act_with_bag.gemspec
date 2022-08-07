@@ -8,15 +8,14 @@ Gem::Specification.new do |s|
   s.summary = "act_with_bag (baggies) gem"
   s.description = "Add a bag to a Rails model"
   s.authors = ["Dittmar Krall"]
-  s.email = ["dittmar.krall@matique.de"]
-  s.homepage = "http://matique.de"
+  s.email = ["dittmar.krall@matiq.com"]
+  s.homepage = "http://matiq.com"
   s.license = "MIT"
   s.platform = Gem::Platform::RUBY
 
   s.metadata["source_code_uri"] = "https://github.com/matique/act_with_bag"
 
   s.files = `git ls-files -z`.split("\x0")
-  s.test_files = s.files.grep(%r{^(test|spec|features)/})
   s.require_paths = ["lib"]
 
   s.add_development_dependency "bundler"

@@ -50,6 +50,25 @@ Using an "add_to_bag" in the subclass obsoletes the "serialize".
 Other records are untouched,
 i.e. the value of the field will be kept in the database.
 
+3. Keep an eye on YAML, the library to serialize the "bag",
+which for some versions is not tamper-proof
+and may required additional configuration in Rails.
+
+See also:
+~~~
+https://stackoverflow.com/questions/72970170/upgrading-to-rails-6-1-6-1-causes-psychdisallowedclass-tried-to-load-unspecif
+~~~
+
+The configuration
+"Rails.application.config.active_record.use_yaml_unsafe_load = true"
+is not recommended as it is a patch prone to attacks.
+
+The configuration
+"Rails.application.config.active_record.yaml_column_permitted_classes = [Symbol]"
+may be incomplete requiring additional classes like "Time" and "Date".
+We are analysing the subject.
+
+(credits to Martin Schöttler).
 
 Example
 =======
@@ -91,4 +110,4 @@ Test
 
     rake
 
-Copyright (c) 2009-2020 [Dittmar Krall], released under the MIT license
+Copyright (c) 2009-2022 [Dittmar Krall], released under the MIT license
