@@ -1,13 +1,14 @@
 require "test_helper"
 
 class Order < ActiveRecord::Base
-#Rails.application.config.active_record.yaml_column_permitted_classes = [Symbol]
+Rails.application.config.active_record.yaml_column_permitted_classes = [Symbol]
   add_to_bag :aa, :bb, :cc
   delete_from_bag :bb
 end
 
 class DeleteTest < ActiveSupport::TestCase
   def setup
+Rails.application.config.active_record.yaml_column_permitted_classes = [Symbol]
     @order = Order.new
   end
 
