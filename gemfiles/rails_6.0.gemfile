@@ -7,9 +7,9 @@ gem "dryer-config", "~> 6.0"
 
 group :test do
   gem "observr"
-  gem "rubocop", require: false
+  gem "standard", require: false
   gem "simplecov", require: false
-  gem "capybara"
+  gem "ricecream"
 end
 
 gemspec path: "../"
