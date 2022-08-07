@@ -8,6 +8,12 @@ appraise "rails-6.0" do
   gem "dryer-config", "~> 6.0"
 end
 
+appraise "yaml-cve" do
+#  ruby "2.6.4"
+  gem "rails", "~> 6.0.5"
+  gem "dryer-config", "~> 6.0"
+end
+
 # appraise 'rails-5.2' do
 #  gem 'rails', '~> 5.2.0'
 #  gem 'dryer-config', '~> 5.2.0'
