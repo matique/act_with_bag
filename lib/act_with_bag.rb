@@ -122,7 +122,7 @@ class << ActiveRecord::Base
           return res if res.class == TrueClass
           return res.to_i != 0
         end
-      ), __FILE__, __LINE__ - 8
+      ), __FILE__, __LINE__ - 7
 
       class_eval %(
         def #{accessor}=(value)
