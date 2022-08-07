@@ -10,7 +10,6 @@ class TypeTest < ActiveSupport::TestCase
   end
 
   test "miscellaneous values" do
-    time = Time.now
     [123, 2.3, "abc", nil, {a: 1}, [1, 2]].each { |value|
       @order.field = value
       assert_value value, @order.field
