@@ -6,8 +6,10 @@ class << ActiveRecord::Base
     serialize :bag, Hash
 
     class_eval %{
-      def bag=(x)
-        #bag changes disabled as it must be handled by Bag himself
+      unless method_defined?(:bag=)
+        def bag=(x)
+          #bag changes disabled as it must be handled by Bag himself
+        end
       end
     }, __FILE__, __LINE__ - 4
 
