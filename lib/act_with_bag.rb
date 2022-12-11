@@ -11,7 +11,7 @@ class << ActiveRecord::Base
           #bag changes disabled as it must be handled by Bag himself
         end
       end
-    }, __FILE__, __LINE__ - 4
+    }, __FILE__, __LINE__ - 6
 
     @baggies_date ||= {}
     baglets.each { |b|

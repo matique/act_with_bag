@@ -39,17 +39,17 @@ def run_matching_files(base)
 end
 
 TESTING.each { |type|
-  watch("#{type}/#{type}_helper\.rb") { run_all_tests }
-  watch("lib/.*\.rb") { run_all_tests }
-  watch("#{type}/.*/*_#{type}\.rb") { |match| run_it type, match[0] }
-  watch("#{type}/data/(.*)\.rb") { |match|
+  watch("#{type}/#{type}_helper.rb") { run_all_tests }
+  watch("lib/.*.rb") { run_all_tests }
+  watch("#{type}/.*/*_#{type}.rb") { |match| run_it type, match[0] }
+  watch("#{type}/data/(.*).rb") { |match|
     m1 = match[1]
     run_matching_files("#{type}/#{m1}/#{m1}_#{type}.rb")
   }
 }
 
 %w[rb erb haml slim].each { |type|
-  watch(".*/(.*)\.#{type}") { |match|
+  watch(".*/(.*).#{type}") { |match|
     run_matching_files(match[1])
   }
 }
