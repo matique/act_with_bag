@@ -1,13 +1,20 @@
-ActWithBag
-==========
+# ActWithBag
+
 [![Gem Version](https://badge.fury.io/rb/act_with_bag.png)](http://badge.fury.io/rb/act_with_bag)
-
-In Gemfile:
-
-    gem 'act_with_bag'
 
 Bag helps when fields in a Rails database table are not yet settled down
 or when many fields without business logic are required.
+
+## Installation
+
+As usual:
+```ruby
+# Gemfile
+gem "act_with_bag"
+```
+and run "bundle install".
+
+## Usage
 
 Install (migrate) one bag as a text field in a table to collect many fields.
 Additional fields or removal of them are easy;
@@ -36,8 +43,7 @@ Obsolete fields are deleted before_save by:
     delete_from_bag :field
 
 
-Warning
-=======
+## Warning
 
 1. Please add a:
 
@@ -68,8 +74,7 @@ The configuration
 may be incomplete requiring additional classes like "Time" and "Date".
 (credits to Martin Schöttler).
 
-Example
-=======
+## Example
 
 In model:
 
@@ -103,9 +108,13 @@ In controller:
       params = Order.merge(@order.bag, self.params) # only if type :date is being used
       @order.update_attributes(params[:order])
 
-Test
-====
+## Test
 
     rake
 
-Copyright (c) 2009-2022 [Dittmar Krall], released under the MIT license
+## Miscellaneous
+
+Copyright (c) 2009-2022 Dittmar Krall (www.matiq.com),
+released under the MIT license:
+
+* https://opensource.org/licenses/MIT

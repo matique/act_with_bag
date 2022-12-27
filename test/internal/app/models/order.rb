@@ -1,4 +1,4 @@
-class Order < ActiveRecord::Base
+class Order < ApplicationRecord
   before_save do |row|
     row.errors.add :base, "panic" if row.category == "error"
   end

@@ -5,7 +5,7 @@ gem "rails"
 
 group :test do
   gem "observr"
-  gem "standard", require: false
-  gem "simplecov", require: false
   gem "ricecream"
+  gem "simplecov", require: false
+  gem "standard", require: false
 end
