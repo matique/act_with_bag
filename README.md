@@ -110,7 +110,7 @@ In controller:
 
 ## Test
 
-    rake
+    bundle exec rake
 
 ## Miscellaneous
 
