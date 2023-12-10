@@ -9,3 +9,6 @@ coverage/
 **/*.gem
 **/*.log
 **/*.lock
+**/test.sqlite3*
+
+test/internal/tmp/

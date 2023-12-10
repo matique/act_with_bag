@@ -9,20 +9,18 @@ Gem::Specification.new do |s|
   s.description = "Add a bag to a Rails model"
   s.authors = ["Dittmar Krall"]
   s.email = ["dittmar.krall@matiq.com"]
-  s.homepage = "http://matiq.com"
+  s.homepage = "https://github.com/matique/act_with_bag"
   s.license = "MIT"
   s.platform = Gem::Platform::RUBY
-
-  s.metadata["source_code_uri"] = "https://github.com/matique/act_with_bag"
 
   s.files = `git ls-files -z`.split("\x0")
   s.require_paths = ["lib"]
 
-  s.add_development_dependency "bundler"
-  s.add_development_dependency "rake"
-  s.add_development_dependency "appraisal"
-  s.add_development_dependency "combustion"
+  s.add_development_dependency "bundler", ">= 0"
+  s.add_development_dependency "rake", ">= 0"
+  s.add_development_dependency "appraisal", ">= 0"
+  s.add_development_dependency "combustion", ">= 0"
 
-  s.add_development_dependency "minitest"
-  s.add_development_dependency "sqlite3"
+  s.add_development_dependency "minitest", ">= 0"
+  s.add_development_dependency "sqlite3", ">= 0"
 end
