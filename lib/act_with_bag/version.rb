@@ -1,5 +1,6 @@
 module ActWithBag
-  VERSION = "1.1.2" # 2023-04-22
+  VERSION = "1.1.3" # 2023-12-10
+  # VERSION = "1.1.2" # 2023-04-22
   # VERSION = "1.1.1" # 2022-12-11
   # VERSION = "1.1.0" # 2022-08-07
   # VERSION = "1.0.4" # 2021-06-17
