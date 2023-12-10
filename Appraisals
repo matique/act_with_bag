@@ -1,6 +1,9 @@
+appraise "rails-7.1" do
+  gem "rails", "~> 7.1"
+end
+
 appraise "rails-7.0" do
   gem "rails", "~> 7.0"
-  gem "dryer-config", "~> 7.0"
 end
 
 appraise "rails-6.1" do
@@ -22,3 +25,13 @@ end
 #  gem 'rails', '~> 5.0.0'
 #  gem 'dryer-config', '~> 5.0.0'
 # end
+
+
+
+#appraise "rails-7.1" do
+#  gem "rails", "~> 7.1"
+#
+#  group :test do
+#    gem "turbo-rails"
+#  end
+#end

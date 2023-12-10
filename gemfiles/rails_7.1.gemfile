@@ -2,8 +2,7 @@
 
 source "https://rubygems.org"
 
-gem "rails", "~> 6.1"
-gem "dryer-config", "~> 6.0"
+gem "rails", "~> 7.1"
 
 group :test do
   gem "observr"
