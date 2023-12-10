@@ -1,6 +1,7 @@
 # ActWithBag
 
 [![Gem Version](https://badge.fury.io/rb/act_with_bag.png)](http://badge.fury.io/rb/act_with_bag)
+[![GEM Downloads](https://img.shields.io/gem/dt/act_with_bag?color=168AFE&logo=ruby&logoColor=FE1616)](https://rubygems.org/gems/act_with_bag)
 
 Bag helps when fields in a Rails database table are not yet settled down
 or when many fields without business logic are required.
