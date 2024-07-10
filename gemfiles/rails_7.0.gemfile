@@ -5,8 +5,8 @@ source "https://rubygems.org"
 gem "rails", "~> 7.0"
 
 group :test do
-  gem "observr"
   gem "ricecream"
+  gem "sqlite3", "~> 1.0"
   gem "simplecov", require: false
   gem "standard", require: false
 end

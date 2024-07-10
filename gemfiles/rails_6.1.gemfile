@@ -6,8 +6,8 @@ gem "rails", "~> 6.1"
 gem "dryer-config", "~> 6.0"
 
 group :test do
-  gem "observr"
   gem "ricecream"
+  gem "sqlite3", "~> 1.0"
   gem "simplecov", require: false
   gem "standard", require: false
 end
