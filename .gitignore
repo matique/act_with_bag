@@ -1,5 +1,6 @@
 .bundle/
 /coverage/
+.watchr
 
 *.gem
 *.log
