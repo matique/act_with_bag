@@ -5,8 +5,10 @@
 
 [![Build Status](https://github.com/teamcapybara/capybara/actions/workflows/build.yml/badge.svg)](https://github.com/teamcapybara/capybara/actions/workflows/build.yml)
 [![Build Status](https://github.com/matique/act_with_bag/actions/workflows/build.yml/badge.svg)](https://github.com/matique/act_with_bag/actions/workflows/build.yml)
+[![Build Status](https://github.com/matique/act_with_bag/actions/workflows/rake.yml/badge.svg)](https://github.com/matique/act_with_bag/actions/workflows/rake.yml)
 [![Tests](https://github.com/standardrb/standard/actions/workflows/test.yml/badge.svg)](https://github.com/standardrb/standard/actions/workflows/test.yml)
 [![Tests](https://github.com/matique/act_with_bag/actions/workflows/test.yml/badge.svg)](https://github.com/standardrb/matique/act_with_bag/actions/workflows/test.yml)
+[![Tests](https://github.com/matique/act_with_bag/actions/workflows/rake.yml/badge.svg)](https://github.com/standardrb/matique/act_with_bag/actions/workflows/rake.yml)
 
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://github.com/standardrb/standard)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](http://choosealicense.com/licenses/mit/)
