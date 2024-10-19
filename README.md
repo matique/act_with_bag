@@ -3,7 +3,9 @@
 [![Gem Version](https://badge.fury.io/rb/act_with_bag.svg)](http://badge.fury.io/rb/act_with_bag)
 [![GEM Downloads](https://img.shields.io/gem/dt/act_with_bag?color=168AFE&logo=ruby&logoColor=FE1616)](https://rubygems.org/gems/act_with_bag)
 
+[![Build Status](https://github.com/teamcapybara/capybara/actions/workflows/build.yml/badge.svg)](https://github.com/teamcapybara/capybara/actions/workflows/build.yml)
 [![Build Status](https://github.com/matique/act_with_bag/actions/workflows/build.yml/badge.svg)](https://github.com/matique/act_with_bag/actions/workflows/build.yml)
+[![Tests](https://github.com/standardrb/standard/actions/workflows/test.yml/badge.svg)](https://github.com/standardrb/standard/actions/workflows/test.yml)
 [![Tests](https://github.com/matique/act_with_bag/actions/workflows/test.yml/badge.svg)](https://github.com/standardrb/matique/act_with_bag/actions/workflows/test.yml)
 
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://github.com/standardrb/standard)
