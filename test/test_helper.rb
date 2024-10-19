@@ -14,4 +14,3 @@ end
 require "rails/test_help"
 require "minitest/autorun"
 require "minitest/benchmark"
-# require 'capybara/rails'
