@@ -5,8 +5,9 @@ source "https://rubygems.org"
 gem "rails", "~> 7.0"
 
 group :test do
+  gem "cuco"
   gem "ricecream"
-  gem "sqlite3", "~> 1.0"
+  gem "sqlite3"
   gem "simplecov", require: false
   gem "standard", require: false
 end
