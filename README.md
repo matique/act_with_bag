@@ -20,7 +20,9 @@
 [![Downloads](https://img.shields.io/gem/dt/act_with_bag?color=brightgreen&logo=rubygems&logoColor=FE1616)](https://rubygems.org/gems/act_with_bag)
 [![GitHub Build](https://img.shields.io/github/actions/workflow/status/matique/act_with_bag/rake.yml?logo=github)](https://github.com/matique/act_with_bag/actions/workflows/rake.yml)
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-standard-blue.svg)](https://github.com/standardrb/standard)
+[![Ruby Style Guide](https://img.shields.io/badge/code_style-standard-168AFE.svg)](https://github.com/standardrb/standard)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](http://choosealicense.com/licenses/mit/)
+[![MIT License](https://img.shields.io/badge/license-MIT-168AFE.svg)](http://choosealicense.com/licenses/mit/)
 
 Bag helps when fields in a Rails database table are not yet settled down
 or when many fields without business logic are required.
