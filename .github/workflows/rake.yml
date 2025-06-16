@@ -8,7 +8,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ruby_version: ["3.2", "3.3"]
+        ruby_version: [head, "3.4", "3.3", "3.2"]
         gemfile:
           - Gemfile
           - gemfiles/Gemfile.rails-7.1
