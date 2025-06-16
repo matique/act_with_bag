@@ -24,6 +24,7 @@ jobs:
           bundler-cache: true
       - name: Bundle install
         run: |
+          bundle config set frozen false
           bundle config path /home/runner/bundle
           bundle install
           bundle update
