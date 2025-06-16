@@ -6,33 +6,12 @@
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://github.com/standardrb/standard)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](http://choosealicense.com/licenses/mit/)
 
-## 22
-[![Gem Version](https://badge.fury.io/rb/act_with_bag.svg)](http://badge.fury.io/rb/act_with_bag)
-[![GEM Downloads](https://img.shields.io/gem/dt/act_with_bag?color=168AFE&logo=ruby&logoColor=FE1616)](https://rubygems.org/gems/act_with_bag)
-[![rake](https://github.com/matique/act_with_bag/actions/workflows/rake.yml/badge.svg)](https://github.com/matique/act_with_bag/actions/workflows/rake.yml)
-[![Ruby Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://github.com/standardrb/standard)
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](http://choosealicense.com/licenses/mit/)
-
 ## 33
 [![Gem Version](https://img.shields.io/gem/v/act_with_bag?color=168AFE&logo=rubygems&logoColor=FE1616)](https://rubygems.org/gems/act_with_bag)
 [![Downloads](https://img.shields.io/gem/dt/act_with_bag?color=168AFE&logo=rubygems&logoColor=FE1616)](https://rubygems.org/gems/act_with_bag)
 [![GitHub Build](https://img.shields.io/github/actions/workflow/status/matique/act_with_bag/rake.yml?logo=github)](https://github.com/matique/act_with_bag/actions/workflows/rake.yml)
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-standard-168AFE.svg)](https://github.com/standardrb/standard)
 [![MIT License](https://img.shields.io/badge/license-MIT-168AFE.svg)](http://choosealicense.com/licenses/mit/)
-
-## 44
-[![Gem Version](https://img.shields.io/gem/v/act_with_bag?color=blue&logo=rubygems&logoColor=FE1616)](https://rubygems.org/gems/act_with_bag)
-[![Downloads](https://img.shields.io/gem/dt/act_with_bag?color=blue&logo=rubygems&logoColor=FE1616)](https://rubygems.org/gems/act_with_bag)
-[![GitHub Build](https://img.shields.io/github/actions/workflow/status/matique/act_with_bag/rake.yml?logo=github)](https://github.com/matique/act_with_bag/actions/workflows/rake.yml)
-[![Ruby Style Guide](https://img.shields.io/badge/code_style-standard-blue.svg)](https://github.com/standardrb/standard)
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](http://choosealicense.com/licenses/mit/)
-
-## 55
-[![Gem Version](https://img.shields.io/gem/v/act_with_bag?logo=rubygems&logoColor=FE1616)](https://rubygems.org/gems/act_with_bag)
-[![Downloads](https://img.shields.io/gem/dt/act_with_bag?logo=rubygems&logoColor=FE1616)](https://rubygems.org/gems/act_with_bag)
-[![GitHub Build](https://img.shields.io/github/actions/workflow/status/matique/act_with_bag/rake.yml?logo=github)](https://github.com/matique/act_with_bag/actions/workflows/rake.yml)
-[![Ruby Style Guide](https://img.shields.io/badge/code_style-standard.svg)](https://github.com/standardrb/standard)
-[![MIT License](https://img.shields.io/badge/license-MIT.svg)](http://choosealicense.com/licenses/mit/)
 
 Bag helps when fields in a Rails database table are not yet settled down
 or when many fields without business logic are required.
