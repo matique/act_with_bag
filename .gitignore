@@ -1,6 +1,6 @@
 # ~/.gitignore included
 
-*.lock
+**/*.lock
 
 /test/internal/storage/
 /test/internal/tmp/
