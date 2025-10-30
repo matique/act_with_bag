@@ -9,7 +9,7 @@ class AccessorTest < ActiveSupport::TestCase
     @order = Order.new
   end
 
-  test "should reject overwriting of column category" do
+  test "reject overwriting of column category" do
     value = "abc"
     assert @order.respond_to?(:category)
     @order.category = value

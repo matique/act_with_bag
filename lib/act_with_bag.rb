@@ -3,11 +3,7 @@
 class << ActiveRecord::Base
   def add_to_bag(*baglets)
     # p "baglets #{baglets.inspect}"
-    if Rails.version < "7.1.0"
-      serialize :bag, Hash
-    else
-      serialize :bag, type: Hash, coder: YAML
-    end
+    serialize :bag, type: Hash, coder: YAML
 
     class_eval %{
       unless method_defined?(:bag=)

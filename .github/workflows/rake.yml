@@ -8,12 +8,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ruby_version: [head, "3.4", "3.2"]
+        ruby_version: [head, "3.4"]
         gemfile:
           - Gemfile
           - gemfiles/Gemfile.rails-8.0
           - gemfiles/Gemfile.rails-7.2
-          - gemfiles/Gemfile.rails-7.1
     runs-on: ubuntu-latest
 
     steps:
