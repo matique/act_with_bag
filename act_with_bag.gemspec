@@ -15,11 +15,10 @@ Gem::Specification.new do |s|
 
   s.files = `git ls-files -z`.split("\x0")
   s.require_paths = ["lib"]
-  s.required_ruby_version = "~> 3"
+  s.required_ruby_version = ">= 3"
 
   s.add_development_dependency "bundler"
   s.add_development_dependency "rake"
-  s.add_development_dependency "appraisal"
   s.add_development_dependency "combustion"
   s.add_development_dependency "minitest"
 end

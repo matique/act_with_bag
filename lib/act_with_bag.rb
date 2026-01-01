@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class << ActiveRecord::Base
   def add_to_bag(*baglets)
     # p "baglets #{baglets.inspect}"
